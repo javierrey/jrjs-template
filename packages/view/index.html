@@ -25,7 +25,7 @@
     (function ready(...args) {
       if (!document.body) return setTimeout(ready, 50, ...args);
       console.log(` view qs: ` + qs('#some-id')?.innerHTML); // ready
-      document.body.append(` !!!! getEnvironment: ${JSON.stringify(getEnvironment())} `);
+      document.body.append(` !!!!! getEnvironment: ${JSON.stringify(getEnvironment())} `);
     })();
   </script>
 </head><body bgcolor="#808080">
