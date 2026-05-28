@@ -1,0 +1,42 @@
+{
+  "name": "jrjs-template",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "description": "jrjs-template framework",
+  "author": "JR <javier.rey.eu@gmail.com> (https://javierrey.github.io)",
+  "workspaces": ["packages/*"],
+  "main": "",
+  "scripts": {
+    "status": "echo CLEAN: && git clean -nfdX -e !.* -e !**/_ignore/ -e !**/_ignore/** && echo NEW: && git ls-files -o --exclude-standard",
+    "clean": "git clean -fdX -e !.* -e !**/_ignore/ -e !**/_ignore/**",
+    "reinstall": "npm run clean && npm install",
+    "format:lib": "npx eslint ./packages/lib",
+    "format:sys": "npx eslint ./packages/sys",
+    "format:view": "npx eslint ./packages/view",
+    "format": "npm run format:lib && npm run format:sys && npm run format:view",
+    "prebuild": "node ./node_modules/jrjs-shared/packages/utils/sys/build/prebuild.js symlink --imports-core=\"\" --imports-view=\"\"",
+    "build:sys": "node ./node_modules/jrjs-shared/packages/utils/sys/build/build.js sys minify \"{}\"",
+    "build:view": "node ./node_modules/jrjs-shared/packages/utils/sys/build/build.js view minify \"{}\"",
+    "build": "npm run build:sys && npm run build:view",
+    "rebuild": "npm install && npm run prebuild && npm run build",
+    "start:dev": "node --preserve-symlinks --preserve-symlinks-main ./packages/sys/index.js \"{}\"",
+    "start": "node --preserve-symlinks --preserve-symlinks-main ./dist/sys/index.js \"{}\"",
+    "stop": "echo @todo stop",
+    "restart": "npm run stop && npm run build && npm run start",
+    "restart:dev": "npm run stop && npm run prebuild && npm run start:dev",
+    "test:lib": "npm -w packages/lib run test",
+    "test:sys": "npm -w packages/sys run test",
+    "test:view": "npm -w packages/view run test",
+    "test": "npm run test:lib && npm run test:sys && npm run test:view"
+  },
+  "devDependencies": {
+    "jrjs-shared": "github:javierrey/jrjs-shared"
+  },
+  "_ignore": {
+    "jrjs-shared": "github:javierrey/jrjs-shared",
+    "jrjs-shared_remote": "https://github.com/javierrey/jrjs-shared",
+    "jrjs-shared_local": "file:../jrjs-shared"
+  }
+}
