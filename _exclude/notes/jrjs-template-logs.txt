@@ -1,0 +1,93 @@
+javier@JRC0 MINGW64 /c/home/projects/apps/js/jrjs-template (dev)
+$ npr start:dev
+
+> jrjs-template@0.0.0 start:dev
+> node --preserve-symlinks --preserve-symlinks-main ./packages/sys/index.js "{}"
+
+
+[INFO 2026-05-28 Th 22:54:47.858] W0 @run.js:73:7
+Primary id 0, pid 32584, workersSize 1, []
+
+[INFO 2026-05-28 Th 22:54:47.920] W1 @run.js:101:7
+Worker id 1, pid 31692, [jrjs-shared/packages/lib/sys/server/run.js]
+
+[INFO 2026-05-28 Th 22:54:47.961] W1 @run.js:57:5
+OK: [processConfig,baseDir,publicDir,privateDir,protocol,host,port,sslCert,sslKey,timeout,clientsSize,clientPortsSize,largeThreshold,uploadLimit,baseFolder,privateFolder,publicFolder,isSSL,cert,key]
+
+[INFO 2026-05-28 Th 22:54:47.968] W1 "server" @server.js:238:9
+Server listening on http://0.0.0.0:3000
+
+[DEBUG 2026-05-28 Th 22:55:04.402] W1 "server" @server.js:106:7
+resolveRoute referer "undefined", route [home,projects,apps,js,jrjs-template,packages,view] (true, false): 
+{
+  root: '',
+  path: '/home/projects/apps/js/jrjs-template/packages/view',
+  slug: '/',
+  query: '',
+  anchor: '',
+  open: 1
+}
+{
+  topPath: '/home/projects/apps/js/jrjs-template/packages/view',
+  topOpen: 1
+}
+
+[DEBUG 2026-05-28 Th 22:55:05.019] W1 "server" @server.js:106:7
+resolveRoute referer "http://192.168.1.237:3000/home/projects/apps/js/jrjs-template/packages/", route [home,projects,apps,js,jrjs-template,packages,view,lib,view] (false, true): 
+{
+  root: '',
+  path: '/home/projects/apps/js/jrjs-template/packages/lib/view',
+  slug: '/view-x.js',
+  query: '',
+  anchor: '',
+  open: 0
+}
+{
+  topPath: '/home/projects/apps/js/jrjs-template/packages/view',
+  topOpen: 1
+}
+
+[DEBUG 2026-05-28 Th 22:55:05.025] W1 "server" @server.js:106:7
+resolveRoute referer "http://192.168.1.237:3000/home/projects/apps/js/jrjs-template/packages/lib/view/view-x.js", route [home,projects,apps,js,jrjs-template,packages,view,lib,view] (false, true): 
+{
+  root: '',
+  path: '/home/projects/apps/js/jrjs-template/packages/lib/view',
+  slug: '/view.js',
+  query: '',
+  anchor: '',
+  open: 0
+}
+{
+  topPath: '/home/projects/apps/js/jrjs-template/packages/view',
+  topOpen: 1
+}
+
+[DEBUG 2026-05-28 Th 22:55:05.027] W1 "server" @server.js:106:7
+resolveRoute referer "http://192.168.1.237:3000/home/projects/apps/js/jrjs-template/packages/lib/view/view-x.js", route [home,projects,apps,js,jrjs-template,packages,view,lib,core] (false, true): 
+{
+  root: '',
+  path: '/home/projects/apps/js/jrjs-template/packages/lib/core',
+  slug: '/core-x.js',
+  query: '',
+  anchor: '',
+  open: 0
+}
+{
+  topPath: '/home/projects/apps/js/jrjs-template/packages/view',
+  topOpen: 1
+}
+
+[DEBUG 2026-05-28 Th 22:55:05.032] W1 "server" @server.js:106:7
+resolveRoute referer "http://192.168.1.237:3000/home/projects/apps/js/jrjs-template/packages/lib/view/view.js", route [home,projects,apps,js,jrjs-template,packages,view,lib,core] (false, true): 
+{
+  root: '',
+  path: '/home/projects/apps/js/jrjs-template/packages/lib/core',
+  slug: '/core.js',
+  query: '',
+  anchor: '',
+  open: 0
+}
+{
+  topPath: '/home/projects/apps/js/jrjs-template/packages/view',
+  topOpen: 1
+}
