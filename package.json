@@ -11,7 +11,7 @@
   "scripts": {
     "status": "echo CLEAN: && git clean -nfdX -e !.* -e !**/_ignore/ -e !**/_ignore/** && echo NEW: && git ls-files -o --exclude-standard",
     "clean": "git clean -fdX -e !.* -e !**/_ignore/ -e !**/_ignore/**",
-    "reinstall": "npm run clean && npm install",
+    "reinstall": "npm run clean && npm install && npm install github:javierrey/jrjs-shared --save-dev",
     "format:lib": "npx eslint ./packages/lib",
     "format:sys": "npx eslint ./packages/sys",
     "format:view": "npx eslint ./packages/view",

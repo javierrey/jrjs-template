@@ -1,5 +1,5 @@
 // sys/index.js
-// @ts-check
+// _@ts-check
 
 globalThis.globalConfig = {
   processConfig: {
