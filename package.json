@@ -6,7 +6,9 @@
   "license": "MIT",
   "description": "jrjs-template framework",
   "author": "JR <javier.rey.eu@gmail.com> (https://javierrey.github.io)",
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "main": "",
   "scripts": {
     "status": "echo CLEAN: && git clean -nfdX -e !.* -e !**/_ignore/ -e !**/_ignore/** && echo NEW: && git ls-files -o --exclude-standard",
