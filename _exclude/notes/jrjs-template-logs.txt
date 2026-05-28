@@ -12,7 +12,63 @@ server resolveRoute
 --------------------------------
 // mac:
 
+╭─reyj@localhost ~/home/projects/apps/js/jrjs-template ‹dev› 
+╰─$ npr start:dev
 
+> jrjs-template@0.0.0 start:dev
+> node --preserve-symlinks --preserve-symlinks-main ./packages/sys/index.js "{}"
+
+
+[INFO 2026-05-28 Th 23:36:12.834] W0 @run.js:73:7
+Primary id 0, pid 18693, workersSize 1, []
+
+[INFO 2026-05-28 Th 23:36:12.883] W1 @run.js:101:7
+Worker id 1, pid 18694, [jrjs-shared/packages/lib/sys/server/run.js]
+
+[INFO 2026-05-28 Th 23:36:12.901] W1 @run.js:57:5
+OK: [processConfig,baseDir,publicDir,privateDir,protocol,host,port,sslCert,sslKey,timeout,clientsSize,clientPortsSize,largeThreshold,uploadLimit,baseFolder,privateFolder,publicFolder,isSSL,cert,key]
+
+[INFO 2026-05-28 Th 23:36:12.907] W1 "server" @server.js:238:9
+Server listening on http://0.0.0.0:3000
+
+[DEBUG 2026-05-28 Th 23:37:36.704] W1 "server" @server.js:106:7
+resolveRoute referer "undefined", route [Users,reyj,home,projects,apps,js,jrjs-template,packages,view] (true, false): 
+{
+  root: '',
+  path: '/Users/reyj/home/projects/apps/js/jrjs-template/packages/view',
+  slug: '/',
+  query: '',
+  anchor: '',
+  open: 1
+}
+{
+  topPath: '/Users/reyj/home/projects/apps/js/jrjs-template/packages/view',
+  topOpen: 1
+}
+
+[DEBUG 2026-05-28 Th 23:37:36.740] W1 "server" @server.js:106:7
+resolveRoute referer "undefined", route [.well-known,appspecific] (true, false): 
+{
+  root: '',
+  path: '/.well-known/appspecific',
+  slug: '/com.chrome.devtools.json',
+  query: '',
+  anchor: '',
+  open: 0
+}
+{ topPath: '/.well-known/appspecific', topOpen: 0 }
+
+[DEBUG 2026-05-28 Th 23:37:36.756] W1 "server" @server.js:106:7
+resolveRoute referer "http://localhost:3000/Users/reyj/home/projects/apps/js/jrjs-template/packages/", route [Users,reyj,home,projects,apps,js,jrjs-template,packages,lib,view] (false, true): 
+{
+  root: '',
+  path: '/Users/reyj/home/projects/apps/js/jrjs-template/packages/lib/view',
+  slug: '/view-x.js',
+  query: '',
+  anchor: '',
+  open: 0
+}
+{ topPath: '/.well-known/appspecific', topOpen: 0 }
 
 --------------------------------
 // win:
