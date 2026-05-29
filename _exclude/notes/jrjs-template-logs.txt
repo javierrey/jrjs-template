@@ -168,6 +168,72 @@ resolveRoute referer "http://192.168.1.237:3000/home/projects/apps/js/jrjs-templ
 }
 
 --------------------------------
+// copilot:
+
+
+Analyzed HTTP headers and Mac log differences
+Let me look at the log files and relevant source code to understand the issue.
+
+Reviewed 3 files
+Now let me find the server.js file to understand the resolveRoute logic.
+
+Searched for "resolveRoute topPath topOpen server.js"
+Now let me find the actual server.js file where resolveRoute and topPath are managed.
+
+Searched for files matching server.js and created todos
+Now I have the key piece. Let me read the resolveRoute function completely and the surrounding context.
+
+Executed commands and proposed solution to prevent overwrite
+I have a clear picture of the bug. Here's the analysis:
+
+Root Cause
+The resolveRoute function tracks topPath per client — the path of the top-level page request (no referer) used to reconstruct filesystem paths for all subsequent file requests (JS/CSS imports).
+
+The problem: Chrome on macOS automatically sends a GET /.well-known/appspecific/com.chrome.devtools.json request (DevTools protocol discovery). This request has:
+
+No referer header (browser-initiated)
+open: 0 (it's a file, not a directory)
+The current condition on line 98 is:
+
+
+if (!request.headers.referer || !props.topPath)
+Because !request.headers.referer is true, it overwrites topPath with /.well-known/appspecific right after the page load set it correctly. All subsequent JS imports then resolve relative to that garbage path.
+
+On Windows, Chrome doesn't make this request (or the timing differs), so topPath stays correct.
+
+The Fix
+The condition should only update topPath when:
+
+topPath is not yet set (initial state), OR
+There's no referer AND the request is an open (directory/page) request — a real navigation
+This rejects the DevTools probe (open: 0, no referer) from overwriting an already-valid topPath.
+
+Executed command in terminal
+Ran sed -i 's/const isTop = !request\.headers\.referer...
+Ran sed -n '95,105p' /mnt/c/home/projects/apps/js/jrjs...
+Fix applied. Here's a summary of the change in jrjs-shared/packages/lib/sys/server/server.js:
+
+Before:
+
+
+const isTop = !request.headers.referer || !props.topPath;if (!request.headers.referer || !props.topPath) {
+After:
+
+
+const isTop = !props.topPath || (!request.headers.referer && urlParts.open);if (!props.topPath || (!request.headers.referer && urlParts.open)) {
+Why this works:
+
+Request	Before	After
+Initial page (open:1, no referer, topPath empty)	Updates topPath ✓	Updates topPath ✓
+Chrome DevTools probe (/.well-known/appspecific, open:0, no referer)	Overwrites topPath ✗	Skipped — topPath already set, open:0 ✓
+New page navigation (open:1, no referer, topPath set)	Updates topPath ✓	Updates topPath ✓
+JS/CSS imports (has referer)	Unchanged ✓	Unchanged ✓
+The root condition was OR — any referer-less request could overwrite topPath. The fix makes it AND: a referer-less request only updates topPath when urlParts.open is 1, which is only true for real page navigations (URLs ending in /), not file probes like the Chrome DevTools discovery request.
+
+Completed: Propose solution to prevent topPath overwrite (3/3)
+
+Claude Sonnet 4.6 • 1x
+
 --------------------------------
 ----------------------------------------------------------
 ----------------------------------------------------------
