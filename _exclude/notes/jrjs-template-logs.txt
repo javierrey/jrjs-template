@@ -235,6 +235,24 @@ Completed: Propose solution to prevent topPath overwrite (3/3)
 Claude Sonnet 4.6 • 1x
 
 --------------------------------
+
+const resolveRoute = (request, urlParts, props) => {
+  let route = urlParts.path.split('/').slice(1);
+  const isTop = !props.topPath || (!request.headers.referer && urlParts.open);
+  if (isTop) { props.topPath = urlParts.path; props.topOpen = urlParts.open; }
+  if (urlParts.path !== props.topPath) {
+    const topRoute = props.topPath.split('/').slice(1); let offset = 0;
+    while (route[offset] === topRoute[offset]) { offset++; }
+    route = [...topRoute.slice(0, offset + props.topOpen), ...route.slice(offset)];
+  }
+  // log.debug(
+  //   `resolveRoute referer "${request.headers.referer}", route [${route}] (${isTop}, ${urlParts.path !== props.topPath}): `,
+  //   urlParts, props,
+  // );
+  return route;
+};
+
+--------------------------------
 ----------------------------------------------------------
 ----------------------------------------------------------
 ----------------------------------------------------------
