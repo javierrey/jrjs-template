@@ -9,6 +9,9 @@ globalThis.globalConfig = {
     workerApps: ['jrjs-shared/packages/lib/sys/server/run.js'],
     ...JSON.parse(process.argv.slice(2).at(-1) || '{}'),
   },
+  serverConfig: {
+    port: 3000,
+  },
 };
 
 import('jrjs-shared/packages/lib/sys/run.js');
