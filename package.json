@@ -13,7 +13,7 @@
   "scripts": {
     "status": "echo CLEAN: && git clean -nfdX -e !.* -e !**/_ignore/ -e !**/_ignore/** && echo NEW: && git ls-files -o --exclude-standard",
     "clean": "git clean -fdX -e !.* -e !**/_ignore/ -e !**/_ignore/**",
-    "reinstall": "npm run clean && npm install && npm install github:javierrey/jrjs-shared --save-dev",
+    "reinstall": "npm run clean && npm i && npm i github:javierrey/jrjs-shared --save-dev",
     "format:lib": "npx eslint ./packages/lib",
     "format:sys": "npx eslint ./packages/sys",
     "format:view": "npx eslint ./packages/view",
@@ -38,7 +38,8 @@
   },
   "_ignore": {
     "jrjs-shared": "github:javierrey/jrjs-shared",
-    "jrjs-shared_remote": "https://github.com/javierrey/jrjs-shared",
-    "jrjs-shared_local": "file:../jrjs-shared"
+    "jrjs-shared_github": "github:javierrey/jrjs-shared",
+    "jrjs-shared_local": "file:../jrjs-shared",
+    "jrjs-shared_http": "https://github.com/javierrey/jrjs-shared"
   }
 }

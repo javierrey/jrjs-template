@@ -3,6 +3,7 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "types": ["node"],
+    "typeRoots": ["./node_modules/jrjs-shared/packages/imports/sys/dev_modules/@types"],
     "target": "ESNext",
     "allowJs": true,
     "declaration": true,
@@ -21,11 +22,11 @@
   "exclude": [
     "_exclude",
     "node_modules",
-    "local_modules",
     "dist",
     "gen",
     "**/*.test.*",
+    "packages/*/imports",
     "packages/*/lib",
-    "packages/*/modules"
+    "packages/*/utils",
   ]
 }

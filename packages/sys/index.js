@@ -1,9 +1,11 @@
 // sys/index.js
 // _@ts-check
 
-globalThis.globalConfig = {
+import { globalState, hydrate } from 'jrjs-shared/packages/lib/sys/sys.js';
+
+const defaults = {
+  workerId: NaN,
   processConfig: {
-    workerId: NaN,
     workersSize: 1, // 0, 1, 2, ... os.cpus().length
     primaryApps: [],
     workerApps: ['jrjs-shared/packages/lib/sys/server/run.js'],
@@ -14,4 +16,8 @@ globalThis.globalConfig = {
   },
 };
 
+hydrate(globalState, defaults);
+
+// http://localhost:3000/Users/reyj/home/projects/apps/js/jrjs-template/packages/view
+// http://localhost:3000/Users/reyj/home/projects/apps/js/node-lab/www/plot-line-curve-svg/mathfun-svg/mathfun-svg.html
 import('jrjs-shared/packages/lib/sys/run.js');
