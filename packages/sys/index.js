@@ -1,5 +1,5 @@
 // sys/index.js
-// _@ts-check
+// @ts-check
 
 /**
 @typedef {import('jrjs-shared/packages/lib/sys/sys.js').SysConfig} SysConfig;
@@ -21,7 +21,7 @@ const config = {
     {
       name: 'server',
       path: 'jrjs-shared/packages/lib/sys/server/run.js',
-      primaryOnly: false,
+      primary: false,
       requires: [],
       state: {},
       config: {
