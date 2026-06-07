@@ -26,7 +26,7 @@ Primary id 0, pid 18693, workersSize 1, []
 Worker id 1, pid 18694, [jrjs-shared/packages/lib/sys/server/run.js]
 
 [INFO 2026-05-28 Th 23:36:12.901] W1 @run.js:57:5
-OK: [processConfig,baseDir,publicDir,privateDir,protocol,host,port,sslCert,sslKey,timeout,clientsSize,clientPortsSize,largeThreshold,uploadLimit,baseFolder,privateFolder,publicFolder,isSSL,cert,key]
+OK: [primaryConfig,baseDir,publicDir,privateDir,protocol,host,port,sslCert,sslKey,timeout,clientsSize,clientPortsSize,largeThreshold,uploadLimit,baseFolder,privateFolder,publicFolder,isSSL,cert,key]
 
 [INFO 2026-05-28 Th 23:36:12.907] W1 "server" @server.js:238:9
 Server listening on http://0.0.0.0:3000
@@ -87,7 +87,7 @@ Primary id 0, pid 32584, workersSize 1, []
 Worker id 1, pid 31692, [jrjs-shared/packages/lib/sys/server/run.js]
 
 [INFO 2026-05-28 Th 22:54:47.961] W1 @run.js:57:5
-OK: [processConfig,baseDir,publicDir,privateDir,protocol,host,port,sslCert,sslKey,timeout,clientsSize,clientPortsSize,largeThreshold,uploadLimit,baseFolder,privateFolder,publicFolder,isSSL,cert,key]
+OK: [primaryConfig,baseDir,publicDir,privateDir,protocol,host,port,sslCert,sslKey,timeout,clientsSize,clientPortsSize,largeThreshold,uploadLimit,baseFolder,privateFolder,publicFolder,isSSL,cert,key]
 
 [INFO 2026-05-28 Th 22:54:47.968] W1 "server" @server.js:238:9
 Server listening on http://0.0.0.0:3000

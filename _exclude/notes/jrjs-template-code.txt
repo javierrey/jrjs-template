@@ -2,6 +2,30 @@
 jrjs-template-code.txt
 ----------------------------------------------------------
 ----------------------------------------------------------
+sys/index.js
+
+// import config from './index.json' with { type: 'json' };
+// const config = await import('./index.json', { assert: { type: 'json' } });
+const config = {
+  workersSize: 1, // 0, 1, 2, ... os.cpus().length
+  primaryApps: [],
+  workerApps: ['jrjs-shared/packages/lib/sys/server/run.js'],
+  apps: [
+    {
+      name: 'server',
+      path: 'jrjs-shared/packages/lib/sys/server/run.js',
+      primary: false,
+      requires: [],
+      state: {},
+      config: {
+        port: 3000,
+        publicDir: '../view',
+        privateDir: '../../_ignore/store',
+      },
+    },
+  ],
+};
+
 ----------------------------------------------------------
 // sys.js, original:
 

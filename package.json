@@ -22,7 +22,7 @@
     "build:sys": "node ./node_modules/jrjs-shared/packages/utils/sys/build/build.js sys minify \"{}\"",
     "build:view": "node ./node_modules/jrjs-shared/packages/utils/sys/build/build.js view minify \"{}\"",
     "build": "npm run build:sys && npm run build:view",
-    "rebuild": "npm install && npm run prebuild && npm run build",
+    "rebuild": "npm i && npm run prebuild && npm run build",
     "start:dev": "node --preserve-symlinks --preserve-symlinks-main ./packages/sys/index.js \"{}\"",
     "start": "node --preserve-symlinks --preserve-symlinks-main ./dist/sys/index.js \"{}\"",
     "stop": "echo @todo stop",
