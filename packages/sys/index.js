@@ -5,7 +5,7 @@
 @typedef {import('jrjs-shared/packages/lib/sys/sys.js').SysConfig} SysConfig;
 */
 
-import { sysConfig, hydrate, log } from 'jrjs-shared/packages/lib/sys/sys.js';
+import { hydrate, sysConfig } from 'jrjs-shared/packages/lib/sys/sys.js';
 
 const params = JSON.parse(process.argv.slice(2).at(-1) || '{}');
 
