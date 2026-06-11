@@ -1,10 +1,10 @@
 // sys/index.js
 // @ts-check
 
-import { log, hydrate, sysConfig } from 'jrjs-shared/packages/lib/sys/sys.js';
+import { log, hydrate, jsonParse, sysConfig } from 'jrjs-shared/packages/lib/sys/sys.js';
 import config from './config.jso.js';
 
-const params = JSON.parse(process.argv.slice(2).at(-1) || '{}');
+const params = jsonParse(process.argv.slice(2).at(-1) || '{}');
 
 hydrate(sysConfig, params, config);
 
