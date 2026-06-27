@@ -2,7 +2,7 @@
 // @ts-check
 
 import { log, hydrate, jsonParse, sysConfig } from 'jrjs-shared/packages/lib/sys/sys.js';
-import config from './config.obj.js';
+import config from './config.js';
 
 const params = jsonParse(process.argv.slice(2).at(-1) || '{}');
 

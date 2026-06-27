@@ -23,15 +23,14 @@
     "build:view": "node ./node_modules/jrjs-shared/packages/utils/sys/build/build.js view minify \"{}\"",
     "build": "npm run prebuild && npm run build:sys && npm run build:view",
     "rebuild": "npm run reinstall && npm run build",
-    "start:dev": "node --preserve-symlinks --preserve-symlinks-main ./packages/sys/index.js \"{}\"",
     "start": "node --preserve-symlinks --preserve-symlinks-main ./dist/sys/index.js \"{}\"",
+    "start:dev": "node --preserve-symlinks --preserve-symlinks-main ./packages/sys/index.js \"{}\"",
     "stop": "echo @todo stop",
     "restart": "npm run stop && npm run build && npm run start",
     "restart:dev": "npm run stop && npm run prebuild && npm run start:dev",
-    "test:lib": "npm -w packages/lib run test",
     "test:sys": "npm -w packages/sys run test",
     "test:view": "npm -w packages/view run test",
-    "test": "npm run test:lib && npm run test:sys && npm run test:view"
+    "test": "npm run test:sys && npm run test:view"
   },
   "devDependencies": {
     "jrjs-shared": "github:javierrey/jrjs-shared"

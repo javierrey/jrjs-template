@@ -1,4 +1,4 @@
-// sys/config.obj.js
+// sys/config.js
 // @ts-check
 
 /**

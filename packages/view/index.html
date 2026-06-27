@@ -19,13 +19,18 @@
   <script type="module">// _@ts-check 'use strict';
     import {
       ge, gt, qs, qa,
-      getEnvironment,
+      jsonStringify, getEnvironment,
     } from './lib/view/view-x.js';
+    import config from './config.js';
     //
+    const appendBr = (el) => el.insertAdjacentHTML('beforeend', `<br/>`);
     (function ready(...args) {
-      if (!document.body) return setTimeout(ready, 50, ...args);
-      console.log(` view qs: ` + qs('#some-id')?.innerHTML); // ready
-      document.body.append(` !!!!! getEnvironment: ${JSON.stringify(getEnvironment())} `);
+      if (!document.body) return setTimeout(ready, 50, ...args); // ready
+      console.log(` view qs: ` + qs('#some-id')?.innerHTML);
+      document.body.append(`config: ${jsonStringify(config)} `);
+      appendBr(document.body);
+      document.body.append(`getEnvironment: ${jsonStringify(getEnvironment())} `);
+      appendBr(document.body);
     })();
   </script>
 </head><body bgcolor="#808080">
