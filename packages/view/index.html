@@ -18,20 +18,19 @@
   </style>
   <script type="module">// _@ts-check 'use strict';
     import {
-      ge, gt, qs, qa,
+      ge, gt, qs, qa, documentReady,
       jsonStringify, getEnvironment,
     } from './lib/view/view-x.js';
     import config from './config.js';
     //
     const appendBr = (el) => el.insertAdjacentHTML('beforeend', `<br/>`);
-    (function ready(...args) {
-      if (!document.body) return setTimeout(ready, 50, ...args); // ready
+    documentReady(() => {
       console.log(` view qs: ` + qs('#some-id')?.innerHTML);
       document.body.append(`config: ${jsonStringify(config)} `);
       appendBr(document.body);
       document.body.append(`getEnvironment: ${jsonStringify(getEnvironment())} `);
       appendBr(document.body);
-    })();
+    });
   </script>
 </head><body bgcolor="#808080">
   <div id="some-id" style="width: 100%;" class="display-flex justify-center big-text">Hello, world!</div>
