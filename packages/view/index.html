@@ -18,13 +18,13 @@
   </style>
   <script type="module">// _@ts-check 'use strict';
     import {
-      ge, gt, qs, qa, documentReady,
+      ge, gt, qs, qa, when,
       jsonStringify, getEnvironment,
     } from './lib/view/view-x.js';
     import config from './config.js';
     //
     const appendBr = (el) => el.insertAdjacentHTML('beforeend', `<br/>`);
-    documentReady(() => {
+    when(() => document.body, () => {
       console.log(` view qs: ` + qs('#some-id')?.innerHTML);
       document.body.append(`config: ${jsonStringify(config)} `);
       appendBr(document.body);
