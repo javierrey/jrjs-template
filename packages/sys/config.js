@@ -28,4 +28,4 @@ export default {
 
 // @remove test examples:
 // http://localhost:3000/Users/reyj/home/projects/apps/js/jrjs-template/packages/view
-// http://localhost:3000/Users/reyj/home/projects/apps/js/node-lab/www/plot-line-curve-svg/mathfun-svg/mathfun-svg.html
+// http://localhost:3000/Users/reyj/home/projects/apps/js/jrjs-shared/packages/utils/view/mathfun/mathfun-svg.html
