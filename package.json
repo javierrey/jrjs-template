@@ -13,13 +13,13 @@
   "scripts": {
     "status": "echo CLEAN: && git clean -nfdX -e !.* -e !**/_ignore/ -e !**/_ignore/** && echo NEW: && git ls-files -o --exclude-standard",
     "clean": "git clean -fdX -e !.* -e !**/_ignore/ -e !**/_ignore/**",
-    "reinstall": "npm run clean && npm i && npm i github:javierrey/jrjs-shared --save-dev",
+    "reinstall": "npm run clean && npm i && npm i github:javierrey/jrjs --save-dev",
     "format:sys": "npx eslint ./packages/sys",
     "format:view": "npx eslint ./packages/view",
     "format": "npm run format:sys && npm run format:view",
-    "prebuild": "node ./node_modules/jrjs-shared/packages/utils/sys/build/prebuild.js symlink --imports-core=\"\" --imports-view=\"\"",
-    "build:sys": "node ./node_modules/jrjs-shared/packages/utils/sys/build/build.js sys minify \"{}\"",
-    "build:view": "node ./node_modules/jrjs-shared/packages/utils/sys/build/build.js view minify \"{}\"",
+    "prebuild": "node ./node_modules/jrjs/packages/utils/sys/build/prebuild.js symlink --imports-core=\"\" --imports-view=\"\"",
+    "build:sys": "node ./node_modules/jrjs/packages/utils/sys/build/build.js sys minify \"{}\"",
+    "build:view": "node ./node_modules/jrjs/packages/utils/sys/build/build.js view minify \"{}\"",
     "build": "npm run prebuild && npm run build:sys && npm run build:view",
     "rebuild": "npm run reinstall && npm run build",
     "start": "node --preserve-symlinks --preserve-symlinks-main ./dist/sys/index.js \"{}\"",
@@ -32,12 +32,12 @@
     "test": "npm run test:sys && npm run test:view"
   },
   "devDependencies": {
-    "jrjs-shared": "github:javierrey/jrjs-shared"
+    "jrjs": "github:javierrey/jrjs"
   },
   "_ignore": {
-    "jrjs-shared": "github:javierrey/jrjs-shared",
-    "jrjs-shared_github": "github:javierrey/jrjs-shared",
-    "jrjs-shared_local": "file:../jrjs-shared",
-    "jrjs-shared_http": "https://github.com/javierrey/jrjs-shared"
+    "jrjs": "github:javierrey/jrjs",
+    "jrjs-github": "github:javierrey/jrjs",
+    "jrjs-local": "file:../jrjs",
+    "jrjs-http": "https://github.com/javierrey/jrjs"
   }
 }

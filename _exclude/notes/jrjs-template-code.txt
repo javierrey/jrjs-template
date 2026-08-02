@@ -9,11 +9,11 @@ sys/index.js
 const config = {
   workersSize: 1, // 0, 1, 2, ... os.cpus().length
   primaryApps: [],
-  workerApps: ['jrjs-shared/packages/lib/sys/server/run.js'],
+  workerApps: ['jrjs/packages/lib/sys/server/run.js'],
   apps: [
     {
       name: 'server',
-      path: 'jrjs-shared/packages/lib/sys/server/run.js',
+      path: 'jrjs/packages/lib/sys/server/run.js',
       primary: false,
       requires: [],
       state: {},
