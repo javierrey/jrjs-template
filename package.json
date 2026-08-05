@@ -17,7 +17,7 @@
     "format:sys": "npx eslint ./packages/sys",
     "format:view": "npx eslint ./packages/view",
     "format": "npm run format:sys && npm run format:view",
-    "prebuild": "node ./node_modules/jrjs/packages/utils/sys/build/prebuild.js symlink --imports-core=\"\" --imports-view=\"\"",
+    "prebuild": "node ./node_modules/jrjs/packages/utils/sys/build/prebuild.js symlink --orig=\"\" --dest=\"\" --imports-core=\"\" --imports-view=\"\"",
     "build:sys": "node ./node_modules/jrjs/packages/utils/sys/build/build.js sys minify \"{}\"",
     "build:view": "node ./node_modules/jrjs/packages/utils/sys/build/build.js view minify \"{}\"",
     "build": "npm run prebuild && npm run build:sys && npm run build:view",
