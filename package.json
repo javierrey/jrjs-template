@@ -31,13 +31,13 @@
     "test:view": "npm -w packages/view run test",
     "test": "npm run test:sys && npm run test:view"
   },
-  "devDependencies": {
-    "jrjs": "github:javierrey/jrjs"
-  },
   "_ignore": {
     "jrjs": "github:javierrey/jrjs",
     "jrjs-github": "github:javierrey/jrjs",
     "jrjs-local": "file:../jrjs",
     "jrjs-http": "https://github.com/javierrey/jrjs"
+  },
+  "devDependencies": {
+    "jrjs": "github:javierrey/jrjs"
   }
 }
