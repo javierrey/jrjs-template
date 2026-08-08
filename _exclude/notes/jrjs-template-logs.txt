@@ -16,7 +16,7 @@ server resolveRoute
 ╰─$ npr start:dev
 
 > jrjs-template@0.0.0 start:dev
-> node --preserve-symlinks --preserve-symlinks-main ./packages/sys/index.js "{}"
+> node --preserve-symlinks --preserve-symlinks-main ./packages/sample/sys/index.js "{}"
 
 
 [INFO 2026-05-28 Th 23:36:12.834] W0 @run.js:73:7
@@ -35,14 +35,14 @@ Server listening on http://0.0.0.0:3000
 resolveRoute referer "undefined", route [Users,reyj,home,projects,apps,js,jrjs-template,packages,view] (true, false): 
 {
   root: '',
-  path: '/Users/reyj/home/projects/apps/js/jrjs-template/packages/view',
+  path: '/Users/reyj/home/projects/apps/js/jrjs-template/packages/sample/view',
   slug: '/',
   query: '',
   anchor: '',
   open: 1
 }
 {
-  topPath: '/Users/reyj/home/projects/apps/js/jrjs-template/packages/view',
+  topPath: '/Users/reyj/home/projects/apps/js/jrjs-template/packages/sample/view',
   topOpen: 1
 }
 
@@ -77,7 +77,7 @@ javier@JRC0 MINGW64 /c/home/projects/apps/js/jrjs-template (dev)
 $ npr start:dev
 
 > jrjs-template@0.0.0 start:dev
-> node --preserve-symlinks --preserve-symlinks-main ./packages/sys/index.js "{}"
+> node --preserve-symlinks --preserve-symlinks-main ./packages/sample/sys/index.js "{}"
 
 
 [INFO 2026-05-28 Th 22:54:47.858] W0 @run.js:73:7
@@ -96,14 +96,14 @@ Server listening on http://0.0.0.0:3000
 resolveRoute referer "undefined", route [home,projects,apps,js,jrjs-template,packages,view] (true, false): 
 {
   root: '',
-  path: '/home/projects/apps/js/jrjs-template/packages/view',
+  path: '/home/projects/apps/js/jrjs-template/packages/sample/view',
   slug: '/',
   query: '',
   anchor: '',
   open: 1
 }
 {
-  topPath: '/home/projects/apps/js/jrjs-template/packages/view',
+  topPath: '/home/projects/apps/js/jrjs-template/packages/sample/view',
   topOpen: 1
 }
 
@@ -118,7 +118,7 @@ resolveRoute referer "http://192.168.1.237:3000/home/projects/apps/js/jrjs-templ
   open: 0
 }
 {
-  topPath: '/home/projects/apps/js/jrjs-template/packages/view',
+  topPath: '/home/projects/apps/js/jrjs-template/packages/sample/view',
   topOpen: 1
 }
 
@@ -133,7 +133,7 @@ resolveRoute referer "http://192.168.1.237:3000/home/projects/apps/js/jrjs-templ
   open: 0
 }
 {
-  topPath: '/home/projects/apps/js/jrjs-template/packages/view',
+  topPath: '/home/projects/apps/js/jrjs-template/packages/sample/view',
   topOpen: 1
 }
 
@@ -148,7 +148,7 @@ resolveRoute referer "http://192.168.1.237:3000/home/projects/apps/js/jrjs-templ
   open: 0
 }
 {
-  topPath: '/home/projects/apps/js/jrjs-template/packages/view',
+  topPath: '/home/projects/apps/js/jrjs-template/packages/sample/view',
   topOpen: 1
 }
 
@@ -163,7 +163,7 @@ resolveRoute referer "http://192.168.1.237:3000/home/projects/apps/js/jrjs-templ
   open: 0
 }
 {
-  topPath: '/home/projects/apps/js/jrjs-template/packages/view',
+  topPath: '/home/projects/apps/js/jrjs-template/packages/sample/view',
   topOpen: 1
 }
 
