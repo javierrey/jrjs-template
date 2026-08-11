@@ -25,11 +25,10 @@
   "exclude": [
     "_exclude",
     "node_modules",
+    "local_modules",
     "dist",
     "gen",
-    "**/*.test.*",
-    "packages/*/imports",
-    "packages/*/lib",
-    "packages/*/utils",
+    "**/*.{test,spec}.*",
+    "packages/**/jrjs"
   ]
 }
