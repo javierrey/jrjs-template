@@ -6,8 +6,11 @@
 @typedef {import('jrjs/packages/lib/sys/cluster.js').ClusterConfig} ClusterConfig;
 */
 
+import { sharedConfig } from '../core/shared.js';
+
 /** @type {PlainObject & ClusterConfig} */
 export default {
+  ...sharedConfig,
   clusterSize: 1, // 0, 1, 2, ... os.cpus().length
   base: '',
   apps: [
