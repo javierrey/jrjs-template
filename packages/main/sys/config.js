@@ -2,8 +2,8 @@
 // @ts-check
 
 /**
-@typedef {import('jrjs/packages/lib/sys/sys.js').PlainObject} PlainObject;
-@typedef {import('jrjs/packages/lib/sys/cluster.js').ClusterConfig} ClusterConfig;
+@typedef {import('../../lib/sys/sys.js').PlainObject} PlainObject;
+@typedef {import('../../lib/sys/cluster.js').ClusterConfig} ClusterConfig;
 */
 
 import { sharedConfig } from '../core/shared.js';
@@ -19,7 +19,7 @@ export default {
   apps: [
     {
       name: 'server',
-      path: 'jrjs/packages/lib/sys/server/run.js',
+      path: '../../lib/sys/server/run.js',
       primary: false,
       requires: [],
       state: {},
@@ -34,4 +34,4 @@ export default {
 
 // @remove test examples:
 // http://localhost:3000
-// http://localhost:3000/imported/utils/view/mathfun/mathfun-svg.html
+// http://localhost:3000/mathfun
