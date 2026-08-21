@@ -35,13 +35,12 @@
     "restart": "npm run stop && npm run build && npm run start",
     "restart:dev": "npm run stop && npm run prebuild && npm run start:dev"
   },
-  "_ignore": {
-    "jrjs": "github:javierrey/jrjs",
-    "jrjs-github": "github:javierrey/jrjs",
-    "jrjs-local": "file:../jrjs",
-    "jrjs-http": "https://github.com/javierrey/jrjs"
-  },
   "dependencies": {
     "jrjs": "github:javierrey/jrjs"
+  },
+  "_ignore": {
+    "jrjs@github": "github:javierrey/jrjs",
+    "jrjs@http": "https://github.com/javierrey/jrjs",
+    "jrjs@local": "file:../jrjs"
   }
 }
