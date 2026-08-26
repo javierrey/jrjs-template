@@ -26,8 +26,8 @@ export default {
       state: {},
       config: {
         port: 3000,
-        publicDir: `${distFolder}/${appName}/view`,
         privateDir: '_ignore/store',
+        publicDir: `${distFolder}/${appName}/view`,
         serviceDir: `${distFolder}/${appName}/sys/services`,
       },
     },
@@ -36,5 +36,5 @@ export default {
 
 // @remove test examples:
 // http://localhost:3000
-// http://localhost:3000/index-load.html
+// http://localhost:3000/content.html
 // http://localhost:3000/mathfun
