@@ -1,8 +1,8 @@
-// drive/index.js
+// main/drive/index.js
 // @ts-check
 
 import { log, hydrate, jsonParse, driveConfig } from 'jrjs/packages/lib/drive/drive.js';
-import config from './config.js';
+import config from './config/index.js';
 
 const params = jsonParse(process.argv.slice(2).at(-1) || '{}');
 
