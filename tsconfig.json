@@ -5,7 +5,7 @@
     "target": "ESNext",
     "lib": ["ESNext", "DOM", "WebWorker"],
     "types": ["node"],
-    "typeRoots": ["./node_modules/jrjs/packages/imports/sys/dev_modules/@types"],
+    "typeRoots": ["./node_modules/jrjs/packages/imports/drive/dev_modules/@types"],
     "allowJs": true,
     "maxNodeModuleJsDepth": 2,
     "declaration": true,

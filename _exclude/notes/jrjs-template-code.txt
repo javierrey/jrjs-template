@@ -2,18 +2,18 @@
 jrjs-template-code.txt
 ----------------------------------------------------------
 ----------------------------------------------------------
-sys/index.js
+drive/index.js
 
 // import config from './index.json' with { type: 'json' };
 // const config = await import('./index.json', { assert: { type: 'json' } });
 const config = {
   workersSize: 1, // 0, 1, 2, ... os.cpus().length
   primaryApps: [],
-  workerApps: ['jrjs/packages/lib/sys/server/run.js'],
+  workerApps: ['jrjs/packages/lib/drive/server/run.js'],
   apps: [
     {
       name: 'server',
-      path: 'jrjs/packages/lib/sys/server/run.js',
+      path: 'jrjs/packages/lib/drive/server/run.js',
       primary: false,
       requires: [],
       state: {},
@@ -27,7 +27,7 @@ const config = {
 };
 
 ----------------------------------------------------------
-// sys.js, original:
+// drive.js, original:
 
 export const getAllFiles = async function* (folder) {
   folder = (folder.replace(/\\/g, '/') + '/').replace(/\/\/+/g, '/');

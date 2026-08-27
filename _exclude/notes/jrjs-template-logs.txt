@@ -16,14 +16,14 @@ server resolveRoute
 ╰─$ npr start:dev
 
 > jrjs-template@0.0.0 start:dev
-> node --preserve-symlinks --preserve-symlinks-main ./packages/main/sys/index.js "{}"
+> node --preserve-symlinks --preserve-symlinks-main ./packages/main/drive/index.js "{}"
 
 
 [INFO 2026-05-28 Th 23:36:12.834] W0 @run.js:73:7
 Primary id 0, pid 18693, workersSize 1, []
 
 [INFO 2026-05-28 Th 23:36:12.883] W1 @run.js:101:7
-Worker id 1, pid 18694, [jrjs/packages/lib/sys/server/run.js]
+Worker id 1, pid 18694, [jrjs/packages/lib/drive/server/run.js]
 
 [INFO 2026-05-28 Th 23:36:12.901] W1 @run.js:57:5
 OK: [primaryConfig,baseDir,publicDir,privateDir,protocol,host,port,sslCert,sslKey,timeout,clientsSize,clientPortsSize,largeThreshold,uploadLimit,baseFolder,privateFolder,publicFolder,isSSL,cert,key]
@@ -77,14 +77,14 @@ javier@JRC0 MINGW64 /c/home/projects/apps/js/jrjs-template (dev)
 $ npr start:dev
 
 > jrjs-template@0.0.0 start:dev
-> node --preserve-symlinks --preserve-symlinks-main ./packages/main/sys/index.js "{}"
+> node --preserve-symlinks --preserve-symlinks-main ./packages/main/drive/index.js "{}"
 
 
 [INFO 2026-05-28 Th 22:54:47.858] W0 @run.js:73:7
 Primary id 0, pid 32584, workersSize 1, []
 
 [INFO 2026-05-28 Th 22:54:47.920] W1 @run.js:101:7
-Worker id 1, pid 31692, [jrjs/packages/lib/sys/server/run.js]
+Worker id 1, pid 31692, [jrjs/packages/lib/drive/server/run.js]
 
 [INFO 2026-05-28 Th 22:54:47.961] W1 @run.js:57:5
 OK: [primaryConfig,baseDir,publicDir,privateDir,protocol,host,port,sslCert,sslKey,timeout,clientsSize,clientPortsSize,largeThreshold,uploadLimit,baseFolder,privateFolder,publicFolder,isSSL,cert,key]
@@ -211,7 +211,7 @@ This rejects the DevTools probe (open: 0, no referer) from overwriting an alread
 Executed command in terminal
 Ran sed -i 's/const isTop = !request\.headers\.referer...
 Ran sed -n '95,105p' /mnt/c/home/projects/apps/js/jrjs...
-Fix applied. Here's a summary of the change in jrjs/packages/lib/sys/server/server.js:
+Fix applied. Here's a summary of the change in jrjs/packages/lib/drive/server/server.js:
 
 Before:
 

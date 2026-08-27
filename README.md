@@ -20,6 +20,6 @@ then copy and minify source from `packages` into the `dist` folder.
 From the repo's root: `npm run start`. It will start the defined application, `npm run start:main` by default.
 
 This will begin running `prebuild:main`, cloning imported and shared source code into the target application, `main`,
-and then will trigger `main/sys/index.js`, configured by  default in `main/sys/config.js` to launch a server.
+and then will trigger `main/drive/index.js`, configured by  default in `main/drive/config.js` to launch a server.
 
 The source code can also be run without the need of a build, `npm run start:dev`, which will also run the `prebuild` command before starting.
