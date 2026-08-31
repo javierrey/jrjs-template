@@ -1,4 +1,5 @@
 // main/drive/services/hub.js
+// @ts-check
 
 /**
 @typedef {import('jrjs/packages/lib/drive/drive.js').PlainObject} PlainObject;
@@ -10,14 +11,12 @@ export * from 'jrjs/packages/lib/drive/drive.js';
 
 export const log = Log({ name: 'services', level: 3 });
 
-/** @param {PlainObject} params @return {Promise<PlainObject>} */
-export const serviceBase = async (params) => {
-  await delay(1);
-  params ??= {}; params.name ||= 'serviceBase';
-  const result = {
+/** @param {PlainObject} [params] @return {Promise<PlainObject>} */
+export const serviceBase = async (params = {}) => {
+  params.name ||= 'serviceBase';
+  return await delay(1).then(() => ({
     name: params.name,
     params,
-    random: Math.random(),
-  }; // log.info(result);
-  return result;
+    updated: Date.now(),
+  }));
 };

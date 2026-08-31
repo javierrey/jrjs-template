@@ -1,22 +1,19 @@
 // main/drive/services/service-two/index.js
+// @ts-check
 
 /**
 @typedef {import('../hub.js').PlainObject} PlainObject;
 */
 
-import { log, jsonStringify, delay, serviceBase } from '../hub.js';
+import { log, jsonStringify, serviceBase } from '../hub.js';
 
-/** @param {PlainObject} params @return {Promise<string>} */
-const serviceTwo = async (params) => {
-  await delay(1);
-  params ??= {}; params.name ||= 'serviceTwo';
-  const result = `
+/** @param {PlainObject} [params] @return {Promise<string>} */
+export default async (params = {}) => {
+  params.name ||= 'serviceTwo';
+  return `
     <link rel="stylesheet" href="/imported/lib/view/view.css"/>
     <style>body { margin: 1rem; }</style>
     <h1>${params.name}</h1>
     <pre>${jsonStringify(await serviceBase(params), null, 2)}</pre>
   `;
-  return result;
 };
-
-export default serviceTwo;
