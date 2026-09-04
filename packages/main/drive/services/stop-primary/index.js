@@ -1,24 +1,21 @@
-// main/drive/services/exit-process/index.js
+// main/drive/services/stop-primary/index.js
 // @ts-check
 
 /**
 @typedef {import('../hub.js').PlainObject} PlainObject;
 */
 
-import { contextHub, delay, log } from '../hub.js';
+import { contextHub, delay, stopPrimaryProcess } from '../hub.js';
 
 /** @param {PlainObject} [params] @return {Promise<PlainObject>} */
 export default async (params = {}) => {
-  params.name ||= 'exitProcess';
-  delay(1, () => {
-    log.warn(`exiting process ${process.pid} (worker ${contextHub.workerId})`);
-    process.exit(1);
-  });
+  params.name ||= 'stopPrimary';
+  delay(1, stopPrimaryProcess);
   return {
     pid: process.pid,
     workerId: contextHub.workerId,
     params,
     updated: Date.now(),
-    status: 'process.exit scheduled',
+    status: 'primary process stop scheduled',
   };
 };
