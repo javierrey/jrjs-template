@@ -15,7 +15,7 @@
     "status": "echo CLEAN: && git clean -nfdX -e !.* -e !**/_ignore/ -e !**/_ignore/** && echo NEW: && git ls-files -o --exclude-standard",
     "clean": "git clean -fdX -e !.* -e !**/_ignore/ -e !**/_ignore/**",
     "clean:install": "npm run clean && npm i && npm i github:javierrey/jrjs",
-    "stop": "echo @todo stop",
+    "stop": "node packages/main/drive/stop.js",
     "format:main": "npx eslint packages/main",
     "sync-source:main": "node node_modules/jrjs/packages/utils/drive/builder/sync-source.js --method=symlink --orig=node_modules/jrjs/packages --dest=packages/main --view-imports=1 --drive-imports=",
     "build:main": "npm run sync-source:main && node node_modules/jrjs/packages/utils/drive/builder/build.js --method=minify --packages=main config=\"{}\"",
