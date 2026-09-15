@@ -2,26 +2,25 @@
 // @ts-check
 
 /**
-@typedef {import('jrjs/packages/lib/drive/cluster.js').ClusterConfig} ClusterConfig;
+@typedef {import('../../../../jrjs/packages/lib/drive/cluster.js').ClusterConfig} ClusterConfig;
 @typedef {{
   moduleName: string;
   distFolder: string;
   privateDir: string;
   publicDir: string;
   servicesDir: string;
-  updated: number;
 }} DriveConfig;
 */
 
 import {
   contextHub, merge, hydrate, jsonParse,
-} from 'jrjs/packages/lib/drive/drive.js';
+} from '../../../../jrjs/packages/lib/drive/drive.js';
 import { coreHub } from '../core/hub.js';
 
-export * from 'jrjs/packages/lib/drive/drive.js';
+export * from '../../../../jrjs/packages/lib/drive/drive.js';
 export {
   getEnvHubName, setupClusterWorker, stopSavedPrimaryProcess,
-} from 'jrjs/packages/lib/drive/cluster.js';
+} from '../../../../jrjs/packages/lib/drive/cluster.js';
 
 const fileFolders = import.meta.url.split('/'), modulePos = -3, distPos = modulePos - 1;
 const moduleName = fileFolders.at(modulePos) ?? '';
@@ -41,16 +40,13 @@ const driveHub = {
   privateDir,
   publicDir,
   servicesDir,
-  updated: Date.now(),
   clusterSize: 1, // 0, 1, 2, ... os.cpus().length
   savePid: true,
   apps: [
     {
       name: 'server',
-      path: 'jrjs/packages/lib/drive/server/run.js',
+      path: '../../../../jrjs/packages/lib/drive/server/run.js',
       primary: false,
-      requires: [],
-      state: {},
       config: {
         port: 3000,
         privateDir,
@@ -62,5 +58,9 @@ const driveHub = {
   ],
 };
 
+/** @type {Partial<DriveConfig & ClusterConfig>} */
+const defaults = {
+};
+
 merge(contextHub, coreHub, driveHub);
-hydrate(contextHub, driveParams);
+hydrate(contextHub, driveParams, defaults);
