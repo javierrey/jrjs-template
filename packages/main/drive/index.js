@@ -8,7 +8,7 @@ log.info(`contextHub: ${jsonStringify(contextHub, null, 2)}`);
 
 contextHub.clusterSize && setupClusterWorker(new URL('./worker.js', import.meta.url));
 
-import('../../../../jrjs/packages/lib/drive/run.js');
+import('jrjs/packages/lib/drive/run.js');
 
 // @remove, test examples:
 // http://localhost:3000?load=&p1=v%201&p2=v%202
