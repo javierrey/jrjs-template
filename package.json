@@ -30,9 +30,8 @@
     "build": "pnpm build:main",
     "clean:build": "pnpm clean:install && pnpm build",
     "test": "pnpm test:main",
-    "stop:dev": "pnpm node:args packages/main/drive/stop.js",
-    "stop": "pnpm node:args dist/main/drive/stop.js",
-    "start:dev": "pnpm stop:dev && pnpm start:dev:main",
+    "stop": "pnpm node:args node_modules/jrjs/packages/lib/drive/stop.js --privateDir=_exclude/_ignore/store --savePid",
+    "start:dev": "pnpm stop && pnpm start:dev:main",
     "start": "pnpm stop && pnpm start:main",
     "clean:start": "pnpm stop && pnpm clean:start:main"
   },

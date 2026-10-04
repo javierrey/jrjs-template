@@ -9,18 +9,16 @@
 @typedef {import('jrjs/packages/lib/drive/drive.js').DriveConfig} DriveConfig;
 @typedef {import('jrjs/packages/lib/drive/cluster.js').ClusterConfig} ClusterConfig;
 @typedef {import('jrjs/packages/lib/drive/server/server.js').ServerConfig} ServerConfig;
-@typedef {DriveConfig & ClusterConfig & {}} DriveHub;
+@typedef {DriveConfig & ClusterConfig & {
+}} DriveHub;
 */
 
 import {
-  environ, merge, hydrate,
+  environ, hydrate,
 } from 'jrjs/packages/lib/drive/drive.js';
 import { coreHub } from '../core/hub.js';
 
 export * from 'jrjs/packages/lib/drive/drive.js';
-export {
-  getEnvHubName, setupClusterWorker, stopSavedPrimaryProcess,
-} from 'jrjs/packages/lib/drive/cluster.js';
 
 const fileFolders = import.meta.url.split('/'), modulePos = -3, distPos = modulePos - 1;
 const moduleName = fileFolders.at(modulePos) ?? '';
@@ -55,5 +53,4 @@ const driveHub = {
   ],
 };
 
-merge(environ.hub, coreHub, driveHub);
-hydrate(environ.hub, environ.args);
+hydrate(environ.hub, driveHub, coreHub, environ.args);
